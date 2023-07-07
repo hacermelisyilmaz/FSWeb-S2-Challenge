@@ -222,7 +222,17 @@ console.log("Görev 3c: ", manav);
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur() {}
+function emojileriDonustur(aMesaj, aEmojiler) {
+  let lowerMesaj = aMesaj.toLowerCase();
+  let emojiliMesaj = "";
+  for (let key in aEmojiler) {
+    emojiliMesaj = lowerMesaj.replaceAll(key, aEmojiler[key]);
+    lowerMesaj = emojiliMesaj;
+  }
+  return emojiliMesaj;
+}
+
+console.log("Görev 4: ", emojileriDonustur("Hello :) <3  :(", emojiler));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
