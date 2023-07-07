@@ -223,16 +223,17 @@ console.log("Görev 3c: ", manav);
  */
 
 function emojileriDonustur(aMesaj, aEmojiler) {
-  let lowerMesaj = aMesaj.toLowerCase();
   let emojiliMesaj = "";
   for (let key in aEmojiler) {
-    emojiliMesaj = lowerMesaj.replaceAll(key, aEmojiler[key]);
-    lowerMesaj = emojiliMesaj;
+    emojiliMesaj = aMesaj.replaceAll(key, aEmojiler[key]);
+    aMesaj = emojiliMesaj;
+    emojiliMesaj = aMesaj.replaceAll(key.toUpperCase(), aEmojiler[key]);
+    aMesaj = emojiliMesaj;
   }
-  return emojiliMesaj;
+  return aMesaj;
 }
 
-console.log("Görev 4: ", emojileriDonustur("Hello :) <3  :(", emojiler));
+console.log("Görev 4: ", emojileriDonustur("Hello :p <3  :O", emojiler));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
